@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistent Connections", "Persistent Connections", "{F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorCounter", "Persistent Connections\VisitorCounter.csproj", "{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{044EE41D-4435-4121-A7D1-64A3E3442AD8}"
+	ProjectSection(SolutionItems) = preProject
+		Persistent Connections\.nuget\NuGet.Config = Persistent Connections\.nuget\NuGet.Config
+		Persistent Connections\.nuget\NuGet.exe = Persistent Connections\.nuget\NuGet.exe
+		Persistent Connections\.nuget\NuGet.targets = Persistent Connections\.nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B} = {F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}
+		{044EE41D-4435-4121-A7D1-64A3E3442AD8} = {F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}
+	EndGlobalSection
+EndGlobal

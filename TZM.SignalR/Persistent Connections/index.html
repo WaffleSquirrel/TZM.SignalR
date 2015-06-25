@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple echo service with persistent connections</title>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/json2.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+</head>
+<body>
+    <h1>Echo service</h1>
+
+    <div>
+        <input type="text" id="text" />
+        <button id="send">Send</button>
+    </div>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            var connection = $.connection("/realtime/echo");
+
+            connection.logging = true;
+
+            connection.received(function (data) {
+                $("body").append(data + "<br />");
+            });
+
+            connection.error(function (err) {
+                alert("No! It seems there is a problem. \n" +
+                            "Error: " + err.message);
+            });
+
+            connection.start().done(function () {
+                $("#send").click(function () {
+                    connection.send($("#text").val());
+                    $("#text").val("").focus();
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>
