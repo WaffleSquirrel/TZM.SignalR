@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{044EE4
 		Persistent Connections\.nuget\NuGet.targets = Persistent Connections\.nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZM.SignalR.WebApi", "Services\TZM.SignalR.WebApi\TZM.SignalR.WebApi.csproj", "{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
