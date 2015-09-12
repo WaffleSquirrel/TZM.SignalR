@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Net.Http.Headers;
 
-namespace ZM.SignalR.Integrations.WebApiMvc.Infrastructure
+namespace ZM.SignalR.Integrations.WebApiMvc.Models.Maps
 {
     public class RequestHeaderMap
     {

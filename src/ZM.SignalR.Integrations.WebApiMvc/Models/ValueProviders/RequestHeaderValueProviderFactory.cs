@@ -1,8 +1,9 @@
 ﻿using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.ValueProviders;
+using ZM.SignalR.Integrations.WebApiMvc.Models.Maps;
 
-namespace ZM.SignalR.Integrations.WebApiMvc.Infrastructure
+namespace ZM.SignalR.Integrations.WebApiMvc.Models.ValueProviders
 {
     public class RequestHeaderValueProviderFactory : ValueProviderFactory
     {

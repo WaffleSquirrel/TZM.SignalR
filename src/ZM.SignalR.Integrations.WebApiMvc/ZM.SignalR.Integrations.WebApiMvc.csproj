@@ -182,9 +182,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Communication\Hubs\TraceHub.cs" />
-    <Compile Include="Infrastructure\RequestHeaderValueProvider.cs" />
-    <Compile Include="Infrastructure\RequestHeaderValueProviderFactory.cs" />
-    <Compile Include="Infrastructure\RequestHeaderMap.cs" />
+    <Compile Include="Models\ValueProviders\RequestHeaderValueProvider.cs" />
+    <Compile Include="Models\ValueProviders\RequestHeaderValueProviderFactory.cs" />
+    <Compile Include="Models\Maps\RequestHeaderMap.cs" />
     <Compile Include="Models\Binders\HumanRequestBinder.cs" />
     <Compile Include="Models\Human.cs" />
     <Compile Include="Models\HumanRequest.cs" />

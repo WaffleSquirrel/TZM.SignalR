@@ -2,9 +2,9 @@
 using System.Web.Http.ModelBinding;
 using System.Web.Http.ModelBinding.Binders;
 using System.Web.Http.ValueProviders;
-using ZM.SignalR.Integrations.WebApiMvc.Infrastructure;
 using ZM.SignalR.Integrations.WebApiMvc.Models;
 using ZM.SignalR.Integrations.WebApiMvc.Models.Binders;
+using ZM.SignalR.Integrations.WebApiMvc.Models.ValueProviders;
 
 namespace ZM.SignalR.Integrations.WebApiMvc
 {
