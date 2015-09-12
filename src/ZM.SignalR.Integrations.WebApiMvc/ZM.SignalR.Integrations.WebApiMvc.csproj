@@ -181,7 +181,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Hubs\TraceHub.cs" />
+    <Compile Include="Infrastructure\Communication\Hubs\TraceHub.cs" />
     <Compile Include="Infrastructure\RequestHeaderValueProvider.cs" />
     <Compile Include="Infrastructure\RequestHeaderValueProviderFactory.cs" />
     <Compile Include="Infrastructure\RequestHeaderMap.cs" />
