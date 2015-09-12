@@ -1,11 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistent Connections", "Persistent Connections", "{F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorCounter", "Persistent Connections\VisitorCounter.csproj", "{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{044EE41D-4435-4121-A7D1-64A3E3442AD8}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{044EE4
 		Persistent Connections\.nuget\NuGet.targets = Persistent Connections\.nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZM.SignalR.WebApi", "Services\ZM.SignalR.WebApi\ZM.SignalR.WebApi.csproj", "{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E1E96854-57D9-453A-B1EA-A50785E9E33E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorCounter", "Samples\Persistent Connections\VisitorCounter.csproj", "{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZM.SignalR.Integrations.WebApiMvc", "ZM.SignalR.Integrations.WebApiMvc\ZM.SignalR.Integrations.WebApiMvc.csproj", "{16B6A63E-22D1-41B6-81C5-93BB4DEF71E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,7 +36,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B} = {F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}
+		{F06C756C-D0AB-4F0D-A1E3-06F77C1066EB} = {E1E96854-57D9-453A-B1EA-A50785E9E33E}
 		{044EE41D-4435-4121-A7D1-64A3E3442AD8} = {F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}
+		{3C4D8A00-515D-4896-BC8A-9BACC8D25C3B} = {F06C756C-D0AB-4F0D-A1E3-06F77C1066EB}
 	EndGlobalSection
 EndGlobal
