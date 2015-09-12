@@ -3,10 +3,10 @@ using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.Communication.Hubs;
 using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.WebApi;
 using ZM.SignalR.Integrations.WebApiMvc.Models;
 
-namespace ZM.SignalR.Integrations.WebApiMvc.Controllers
+namespace ZM.SignalR.Integrations.WebApiMvc.Controllers.WebApi
 {
     [RoutePrefix("api/humans")]
-    public class HumanController : BaseWebApiHubController<ConnectionBroadcaster>
+    public class HumanApiController : BaseWebApiHubController<ConnectionBroadcaster>
     {
         /// <summary>
         /// Retrieves a Human by unique identifier.
