@@ -182,6 +182,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Communication\Hubs\TraceHub.cs" />
+    <Compile Include="Infrastructure\Mvc\BaseMvcHubController.cs" />
+    <Compile Include="Infrastructure\WebApi\BaseWebApiHubController.cs" />
     <Compile Include="Models\ValueProviders\RequestHeaderValueProvider.cs" />
     <Compile Include="Models\ValueProviders\RequestHeaderValueProviderFactory.cs" />
     <Compile Include="Models\Maps\RequestHeaderMap.cs" />
