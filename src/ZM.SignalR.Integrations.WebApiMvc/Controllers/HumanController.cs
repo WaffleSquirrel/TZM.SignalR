@@ -1,10 +1,12 @@
 ﻿using System.Web.Http;
+using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.Communication.Hubs;
+using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.WebApi;
 using ZM.SignalR.Integrations.WebApiMvc.Models;
 
 namespace ZM.SignalR.Integrations.WebApiMvc.Controllers
 {
     [RoutePrefix("api/humans")]
-    public class HumanController : ApiController
+    public class HumanController : BaseWebApiHubController<ConnectionBroadcaster>
     {
         /// <summary>
         /// Retrieves a Human by unique identifier.
