@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Threading.Tasks;
+using System.Web.Http;
 using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.Communication.Hubs;
 using ZM.SignalR.Integrations.WebApiMvc.Infrastructure.WebApi;
 using ZM.SignalR.Integrations.WebApiMvc.Models;
@@ -19,7 +21,7 @@ namespace ZM.SignalR.Integrations.WebApiMvc.Controllers.WebApi
         /// <example>GET api/humans/get-human/5?guessednumber=25</example>
         [HttpGet]
         [Route("get-human/{humanId}/{guessedNumber}")]
-        public IHttpActionResult GetHuman(HumanRequest humanRequest)
+        public IHttpActionResult HumanSearch(HumanRequest humanRequest)
         {
             if (humanRequest == null || humanRequest.Id < 1 || humanRequest.Id > 10)
             {
@@ -42,12 +44,27 @@ namespace ZM.SignalR.Integrations.WebApiMvc.Controllers.WebApi
             }
             else
             {
-                human.NoteToSelf = "You may not have a dirty mind.";
+                human.NoteToSelf = "You are pretty.";
             }
 
             var humanResponse = new HumanResponse() { Human = human };
 
             return Ok<HumanResponse>(humanResponse);
+        }
+
+        /// <summary>
+        /// Sends a posted message from one connected Human to all the other connected Humans, if any.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("send-message")]
+        public async Task<string> SendMessageToHumans()
+        {
+            const string responseMessageFormatString = "[{0}]:> {1}";
+
+            await this.Clients.All.Message("Web API action was invoked! Whoa dude!");
+
+            return string.Format(responseMessageFormatString, DateTime.Now.ToString("hh:mm:ss"), "Hola from the server.");
         }
     }
 }

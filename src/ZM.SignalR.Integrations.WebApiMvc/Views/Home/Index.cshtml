@@ -1,2 +1,69 @@
-﻿
-Waffles.
+﻿@section Styles
+{
+    @Styles.Render("~/bundles/prettifyCss")
+}
+
+<div class="row">
+    <h4>SignalR - Server Integrations <small>for ASP.NET MVC and Web API</small></h4>
+</div>
+<div class="row">
+    <div id="ConsoleTitlebar" class="label label-info note-well">
+        Real-time console messages
+    </div>
+    <div id="ConsoleWell" class="well prettyprint pre-scrollable console">
+        <ul id="ConsoleList"></ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h4>Testing the ASP.NET MVC Integration</h4>
+        <p>Enter a message in the form shown below.</p>
+        <p>After clicking the [Send Message!] button, a notification will be sent to the server.</p>
+        <p>            
+            Once the server receives the notification, an ASP.NET MVC action method is invoked 
+            in a Controller that uses a "broadcaster" Hub to notify all connected clients of the 
+            application that a message has been submitted.
+        </p>
+        <form class="form-horizontal body-content" role="form" method="post" action="@Url.Action("SendMessageToHumans", "Home")">
+            <div class="form-group">
+                <label for="MessageToHumans" class="control-label">Your Message:</label>
+                <textarea id="MessageToHumans" name="MessageToHumans" placeholder="<enter message here>" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-primary">Send Message!</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h4>Testing the ASP.NET Web API Integration</h4>
+        <p>The button below sends an Ajax request to a Web API action method which broadcasts a message to all connected clients of the application.</p>
+        <p><a class="btn btn-primary" href="#" id="CallWebApiButton">Call Web API</a></p>
+        <div class="label label-success" id="Result"></div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/prettifyJs")
+    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="~/signalr/js"></script>
+    <script>
+        $(function () {
+            $("#CallWebApiButton").click(function () {
+                $.ajax({ url: "/api/humans/send-message", type: "post" })
+                    .done(function (resultData) {
+                        $("#Result").text("[Result]: " + resultData).fadeIn("slow");
+                        setTimeout(function () { $("#Result").fadeOut("slow"); }, 2000);
+                    });
+            });
+
+            var broadcaster = $.connection.connectionBroadcaster;
+
+            broadcaster.client.message = function (data) {
+                $("#ConsoleList").prepend("<li>" + data + "</li>");
+            };
+
+            $.connection.hub.start();
+        });
+    </script>
+}

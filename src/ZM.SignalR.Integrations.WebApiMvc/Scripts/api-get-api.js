@@ -1,44 +1,43 @@
-﻿function HumanInputModel()
+﻿function ApiInputModel()
 {
-    this.humanId = ko.observable(1);
-    this.gender = ko.observable("Male");
-    this.guessedNumber = ko.observable(25);
+    this.apiId = ko.observable(10000);
 }
 
-function HumanViewModel(humanModel) {
-    this.model = humanModel;
-    this.humanId = ko.observable(this.model.Id);
-    this.gender = ko.observable(this.model.Gender);
-    this.noteToSelf = ko.observable(this.model.NoteToSelf);
+function ApiViewModel(apiModel) {
+    this.model = apiModel;
+    this.apiId = ko.observable(this.model.Id);
+    this.apiName = ko.observable(this.model.Name);
+    this.apiDescription = ko.observable(this.model.Description);
+    this.apiVersion = ko.observable(this.model.Version);
 }
 
 var response = ko.observable("Ready to search...");
 var gotError = ko.observable(false);
 
-var inputModel = new HumanInputModel();
-var viewModel = new HumanViewModel(HumanModel);
+var inputModel = new ApiInputModel();
+var viewModel = new ApiViewModel(ApiModel);
 
-var GetHuman = function (requestType) {
+var GetApi = function () {
     errors.removeAll();
 
-    var url = "/api/humans/get-human/" + inputModel.humanId() + "/" + inputModel.guessedNumber();
+    var url = "/api/inventory/get-api/" + inputModel.apiId();
 
     $.ajax(url,
     {
         type: "GET",
         headers: {
             "ZM.ApiVersion": 1,
-            "Gender": inputModel.gender()
         },
-        data: "humanId=" + inputModel.humanId(),
+        data: "apiId=" + inputModel.apiId(),
         success: function (data) {
             gotError(false);
 
-            response("Found a Human #" + data.Human.Id);
+            response("Found an API named [" + data.Api.Name + "]");
 
-            viewModel.humanId(data.Human.Id);
-            viewModel.gender(data.Human.Gender);
-            viewModel.noteToSelf(data.Human.NoteToSelf);
+            viewModel.apiId(data.Api.Id);
+            viewModel.apiName(data.Api.Name);
+            viewModel.apiDescription(data.Api.Description);
+            viewModel.apiVersion(data.Api.Version);
         },
         error: function (jqXHR) {
             gotError(true);

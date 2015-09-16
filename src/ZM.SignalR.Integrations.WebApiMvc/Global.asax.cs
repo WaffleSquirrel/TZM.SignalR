@@ -6,7 +6,7 @@ using System.Web.Routing;
 
 namespace ZM.SignalR.Integrations.WebApiMvc
 {
-    public class WebApiApplication : HttpApplication
+    public class ZmApplication : HttpApplication
     {
         protected void Application_Start()
         {

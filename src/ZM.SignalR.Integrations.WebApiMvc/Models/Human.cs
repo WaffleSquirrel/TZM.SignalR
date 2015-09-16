@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace ZM.SignalR.Integrations.WebApiMvc.Models
+﻿namespace ZM.SignalR.Integrations.WebApiMvc.Models
 {
     public class Human
     {

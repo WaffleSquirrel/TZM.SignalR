@@ -19,8 +19,14 @@ namespace ZM.SignalR.Integrations.WebApiMvc
 
             config.Routes.MapHttpRoute(
                 name: "HumanActions",
-                routeTemplate: "api/{controller}/{action}/{humanId}/{guessedNumber}",
+                routeTemplate: "api/humans/{action}/{humanId}/{guessedNumber}",
                 defaults: new { controller = "humans", humanId = RouteParameter.Optional, guessedNumber = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "InventoryActions",
+                routeTemplate: "api/inventory/{action}/{apiId}",
+                defaults: new { controller = "inventory", apiId = RouteParameter.Optional }
             );
 
             // Web API model bindings
@@ -30,6 +36,12 @@ namespace ZM.SignalR.Integrations.WebApiMvc
                 typeof(ModelBinderProvider), 
                 0, 
                 new SimpleModelBinderProvider(typeof(HumanRequest), new HumanRequestBinder())
+            );
+
+            config.Services.Insert(
+                typeof(ModelBinderProvider),
+                0,
+                new SimpleModelBinderProvider(typeof(ApiRequest), new ApiRequestBinder())
             );
         }
     }

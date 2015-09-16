@@ -9,9 +9,66 @@
     padding-right: 15px;
 }
 
+/* Setup design and layout of Page Validation feedback */
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    min-width: 240px;
+    max-width: 380px;
+}
+
+/* Setup design and layout definitions for a Console area aka Terminal */
+div#ConsoleTitlebar.label {
+    display: block;
+    text-align: left;
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+div#ConsoleTitlebar.label-info {
+    color: #222;
+}
+
+div#ConsoleTitlebar.note-well {
+    padding: 6px;
+    border-radius: 0em;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+div#ConsoleWell, 
+.console, 
+.well {
+    background-image: none;
+    background-color: #222;
+}
+
+div#ConsoleWell {
+    height: 80px;
+}
+
+ul#ConsoleList {
+    font-family: Consolas;
+    font-size: 10pt;
+    color: snow;
+    padding: 2px;
+}
+
+ul#ConsoleList li {
+    list-style: none;
+}
+
+/* Setup design and layout for the input form(s) */
+#MessageToHumans {
+    width: 100%;
+    display: block;
 }

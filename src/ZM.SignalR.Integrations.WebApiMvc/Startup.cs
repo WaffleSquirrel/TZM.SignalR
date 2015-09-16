@@ -6,7 +6,7 @@ using ZM.SignalR.Integrations.WebApiMvc;
 
 namespace ZM.SignalR.Integrations.WebApiMvc
 {
-    public partial class Startup
+    public class Startup
     {
         public void Configuration(IAppBuilder app)
         {

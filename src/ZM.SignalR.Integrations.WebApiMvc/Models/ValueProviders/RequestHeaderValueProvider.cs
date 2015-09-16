@@ -16,11 +16,13 @@ namespace ZM.SignalR.Integrations.WebApiMvc.Models.ValueProviders
 
         public ValueProviderResult GetValue(string key)
         {
-            string value = headers[key.Split('.').Last()];
+            string value = key != null && headers.ContainsHeader(key)
+                ? headers[key]
+                : null;
 
-            return value == null
-                ? null
-                : new ValueProviderResult(value, value, CultureInfo.InvariantCulture);
+            return value != null
+                ? new ValueProviderResult(value, value, CultureInfo.InvariantCulture)
+                : null;
         }
 
         public bool ContainsPrefix(string prefix)
